@@ -1,5 +1,8 @@
 #! /usr/bin/env python3
 
+# this program takes a couple of pre-loaded txt files from the local disk and
+# converts them into a dictionary that can be sent to a website for serialisation
+
 import os 
 import requests
 
@@ -16,7 +19,7 @@ for filename in os.listdir(directory):
                 feedback_list.append(person_dict)
 
 for person in feedback_list:
-        response = requests.post('http://104.154.71.132/feedback/', data=person)
+        response = requests.post('http://<local host>/feedback/', data=person)
         if response.ok:
                 print("Congratulations! Entry loaded.")
         else:
