@@ -23,4 +23,4 @@ for person in feedback_list:
         if response.ok:
                 print("Congratulations! Entry loaded.")
         else:
-                print(f"Error: {response.status_code})")
+                print(f"Error. Entry load failed with status code {response.status_code})")
